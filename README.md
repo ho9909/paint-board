@@ -33,7 +33,7 @@
 >> ```
 >> 더블 버퍼링(Double Buffering)은 이중 버퍼링이라 불리기도 하며, 그래픽 객체에 이미지를 그릴 때 사용되는 기법이다.
 >> [참고 이미지] 
->> <p align="center>
+     <p align="center>
      <img src = "https://github.com/ho9909/paint-board/issues/1#issuecomment-2832021970">
      </p>
 >> 사용하는 이유
