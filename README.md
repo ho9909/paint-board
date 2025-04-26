@@ -29,7 +29,7 @@
 >> <details><summary>자세한 내용</summary>
 >> <p>
 >> 
->> #### 더블 버퍼링이란?
+>> 더블 버퍼링이란?
 >> ```
 >> 더블 버퍼링(Double Buffering)은 이중 버퍼링이라 불리기도 하며, 그래픽 객체에 이미지를 그릴 때 사용되는 기법이다.
 >> 사용하는 이유
@@ -45,10 +45,11 @@
 > 3. 파일저장 및 열기 ( 비트맵(24, 8), VI 파일, RAW, PNG, JPG)
 >> <details><summary>VI 파일 설명</summary>
 >> <p>
->> #### VI파일 이란?
+>>  VI파일 이란?
 >> <br />
 >> <img src="https://github.com/user-attachments/assets/1c410716-862d-41cf-bd78-b2917913c6f1" width="50%">
->> 
+>> <br />
+>> 위의 그림과 같이 파일을 저장 or 열때 사용했던 기능들을 숫자 값으로 저장하는 방식
 >>
 >> </p>
 >> </details>
