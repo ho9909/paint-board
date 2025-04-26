@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/47cf23c2-6755-4b44-97a9-4b43e0c0705d)# 메모장
+# 그림판
 > 컴퓨터에서 기본적으로 제공하는 그림판(Paint-Board) 기능을 구현하고 추가 기능을 넣어보기
 >
 <br />
