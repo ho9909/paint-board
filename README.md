@@ -32,10 +32,7 @@
 >> #### 더블 버퍼링이란?
 >> ```
 >> 더블 버퍼링(Double Buffering)은 이중 버퍼링이라 불리기도 하며, 그래픽 객체에 이미지를 그릴 때 사용되는 기법이다.
->> [참고 이미지] 
-     <p align="center>
-     <img src = "https://github.com/ho9909/paint-board/issues/1#issuecomment-2832021970">
-     </p>
+>> [참고 이미지] <p align="center> <img src = "https://github.com/ho9909/paint-board/issues/1#issuecomment-2832021970"> </p>
 >> 사용하는 이유
 >> 이미지를 그리는 데 시간이 소요되므로 이미지의 출력이 잦을수록 깜빡거리는 현상이 심해진다.
 >> 시각적으로 불편함을 없에기 위해 사용함
