@@ -47,6 +47,9 @@
 >> <p>
 >> #### VI파일 이란?
 >> ```
+>> ![image](https://github.com/user-attachments/assets/1c410716-862d-41cf-bd78-b2917913c6f1)
+>> ```
+>>
 >> </p>
 >> </details>
 > 4. 도형이 겹쳐있는 경우 뒤에 있는 도형 마우스 우클릭스 뒤에 있는 도형이 앞으로 오는 기능
