@@ -3,7 +3,7 @@
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
 
-LPCTSTR lpszClass = TEXT("4. 그림판 만들기 2017E7032 장현우");			// LPCSTR = char *
+LPCTSTR lpszClass = TEXT("4. 그림판 만들기");			// LPCSTR = char *
 HINSTANCE g_hinstance;
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, //WINAPI : 윈도우 프로그램이라는 의미
 	LPSTR lpszCmdLine, int nCmdShow)						 //hInstance : 운영체제의 커널이 응용 프로그램에 부여한 ID
