@@ -47,7 +47,7 @@
 >> <p>
 >> #### VI파일 이란?
 >> ```
->> ![image](https://github.com/user-attachments/assets/1c410716-862d-41cf-bd78-b2917913c6f1)
+>> <img src="https://github.com/user-attachments/assets/1c410716-862d-41cf-bd78-b2917913c6f1" width="50%">
 >> ```
 >>
 >> </p>
