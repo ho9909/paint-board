@@ -8,28 +8,28 @@ extern int x, y, old_x, old_y, shape, size, p_color, e_color;
 extern RECT rt;
 extern HPEN hpen, old_hpen;
 extern HBRUSH hbrush, old_hbrush;
-extern OPENFILENAME OFN; //ÀÔÃâ·Â ±¸Á¶Ã¼
+extern OPENFILENAME OFN; //ì…ì¶œë ¥ êµ¬ì¡°ì²´
 extern HANDLE fp; 
 extern DWORD readn;
 
-typedef struct save_vi { // vi ±¸Á¶Á¦
-		int		vshape; // µµÇü ¸ğ¾ç4
+typedef struct save_vi { // vi êµ¬ì¡°ì œ
+		int		vshape; // ë„í˜• ëª¨ì–‘4
 		int		lineshape;
-        POINT	old; // Ã³À½ ±âÁØ ÁÂÇ¥8
-        POINT	now; // ³ªÁß ÁÂÇ¥8
-		int	flag_fill; // Ã¤¿ì±â ¿©ºÎ4
-        COLORREF	line_color; // ¶óÀÎ »ö»ó4
-        COLORREF	fill_color; // Ã¤¿ì±â »ö»ó4
+        POINT	old; // ì²˜ìŒ ê¸°ì¤€ ì¢Œí‘œ8
+        POINT	now; // ë‚˜ì¤‘ ì¢Œí‘œ8
+		int	flag_fill; // ì±„ìš°ê¸° ì—¬ë¶€4
+        COLORREF	line_color; // ë¼ì¸ ìƒ‰ìƒ4
+        COLORREF	fill_color; // ì±„ìš°ê¸° ìƒ‰ìƒ4
 		int line_color_count;
 		int fill_color_count;
-		int		size; // ¼±ÀÇ µÎ²²4
-		save_vi*	ptr; // ´ÙÀ½ Æ÷ÀÎÅÍ4
+		int		size; // ì„ ì˜ ë‘ê»˜4
+		save_vi*	ptr; // ë‹¤ìŒ í¬ì¸í„°4
 } vi;
 
 typedef struct LinkedList { 
-		save_vi*	now_ptr; // ÇöÀç Æ÷ÀÎÅÍ
-		save_vi*	head_ptr; // Ã¹¹øÂ° Æ÷ÀÎÅÍ
-		DWORD count; // vi±¸Á¶Ã¼ÀÇ °³¼ö
+		save_vi*	now_ptr; // í˜„ì¬ í¬ì¸í„°
+		save_vi*	head_ptr; // ì²«ë²ˆì§¸ í¬ì¸í„°
+		DWORD count; // viêµ¬ì¡°ì²´ì˜ ê°œìˆ˜
 } Linkedlist;
 
 typedef struct tagRAWINFOHEARER{
