@@ -3,43 +3,43 @@
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
 
-LPCTSTR lpszClass = TEXT("4. ±×¸²ÆÇ ¸¸µé±â 2017E7032 ÀåÇö¿ì");			// LPCSTR = char *
+LPCTSTR lpszClass = TEXT("4. ê·¸ë¦¼íŒ ë§Œë“¤ê¸° 2017E7032 ì¥í˜„ìš°");			// LPCSTR = char *
 HINSTANCE g_hinstance;
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, //WINAPI : À©µµ¿ì ÇÁ·Î±×·¥ÀÌ¶ó´Â ÀÇ¹Ì
-	LPSTR lpszCmdLine, int nCmdShow)						 //hInstance : ¿î¿µÃ¼Á¦ÀÇ Ä¿³ÎÀÌ ÀÀ¿ë ÇÁ·Î±×·¥¿¡ ºÎ¿©ÇÑ ID
-{																 //szCmdLine : Ä¿¸àÆ®¶óÀÎ »ó¿¡¼­ ÇÁ·Î±×·¥ ±¸µ¿ ½Ã Àü´ŞµÈ ¹®ÀÚ¿­
-	HWND	hwnd;												 //iCmdShow : À©µµ¿ì°¡ È­¸é¿¡ Ãâ·ÂµÉ ÇüÅÂ
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, //WINAPI : ìœˆë„ìš° í”„ë¡œê·¸ë¨ì´ë¼ëŠ” ì˜ë¯¸
+	LPSTR lpszCmdLine, int nCmdShow)						 //hInstance : ìš´ì˜ì²´ì œì˜ ì»¤ë„ì´ ì‘ìš© í”„ë¡œê·¸ë¨ì— ë¶€ì—¬í•œ ID
+{																 //szCmdLine : ì»¤ë©˜íŠ¸ë¼ì¸ ìƒì—ì„œ í”„ë¡œê·¸ë¨ êµ¬ë™ ì‹œ ì „ë‹¬ëœ ë¬¸ìì—´
+	HWND	hwnd;												 //iCmdShow : ìœˆë„ìš°ê°€ í™”ë©´ì— ì¶œë ¥ë  í˜•íƒœ
 	MSG		msg;
-	WNDCLASS WndClass;											//WndClass ¶ó´Â ±¸Á¶Ã¼ Á¤ÀÇ									 
-	WndClass.style			= CS_HREDRAW | CS_VREDRAW;			//Ãâ·Â½ºÅ¸ÀÏ : ¼öÁ÷/¼öÆòÀÇ º¯È­½Ã ´Ù½Ã ±×¸²		//Horizontal, Vertical 
-	WndClass.lpfnWndProc	= WndProc;							//ÇÁ·Î½ÃÀú ÇÔ¼ö¸í	
-	WndClass.cbClsExtra		= 0;			 					//O/S »ç¿ë ¿©ºĞ ¸Ş¸ğ¸® (Class)
-	WndClass.cbWndExtra		= 0;			 					//O/s »ç¿ë ¿©ºĞ ¸Ş¸ğ¸® (Window)
-	WndClass.hInstance		= hInstance;						//ÀÀ¿ë ÇÁ·Î±×·¥ ID
-	WndClass.hIcon			= LoadIcon(NULL, IDI_APPLICATION);	  //¾ÆÀÌÄÜ À¯Çü
-	WndClass.hCursor		= LoadCursor(NULL, IDC_CROSS);		  //Ä¿¼­ À¯Çü
-	WndClass.hbrBackground	= (HBRUSH)GetStockObject(WHITE_BRUSH);//¹è°æ»ö   
-	WndClass.lpszMenuName	= MAKEINTRESOURCE(IDR_MENU1);		 //¸Ş´º ÀÌ¸§
-	WndClass.lpszClassName	= lpszClass;						 //Å¬·¡½º ÀÌ¸§
-	RegisterClass(&WndClass);									 //¾Õ¼­ Á¤ÀÇÇÑ À©µµ¿ì Å¬·¡½ºÀÇ ÁÖ¼Ò // os ¿¡´Ù°¡ Áö±İ ÀÌ Å¬·¡½º¸¦ µî·Ï½ÃÅ´ 
+	WNDCLASS WndClass;											//WndClass ë¼ëŠ” êµ¬ì¡°ì²´ ì •ì˜									 
+	WndClass.style			= CS_HREDRAW | CS_VREDRAW;			//ì¶œë ¥ìŠ¤íƒ€ì¼ : ìˆ˜ì§/ìˆ˜í‰ì˜ ë³€í™”ì‹œ ë‹¤ì‹œ ê·¸ë¦¼		//Horizontal, Vertical 
+	WndClass.lpfnWndProc	= WndProc;							//í”„ë¡œì‹œì € í•¨ìˆ˜ëª…	
+	WndClass.cbClsExtra		= 0;			 					//O/S ì‚¬ìš© ì—¬ë¶„ ë©”ëª¨ë¦¬ (Class)
+	WndClass.cbWndExtra		= 0;			 					//O/s ì‚¬ìš© ì—¬ë¶„ ë©”ëª¨ë¦¬ (Window)
+	WndClass.hInstance		= hInstance;						//ì‘ìš© í”„ë¡œê·¸ë¨ ID
+	WndClass.hIcon			= LoadIcon(NULL, IDI_APPLICATION);	  //ì•„ì´ì½˜ ìœ í˜•
+	WndClass.hCursor		= LoadCursor(NULL, IDC_CROSS);		  //ì»¤ì„œ ìœ í˜•
+	WndClass.hbrBackground	= (HBRUSH)GetStockObject(WHITE_BRUSH);//ë°°ê²½ìƒ‰   
+	WndClass.lpszMenuName	= MAKEINTRESOURCE(IDR_MENU1);		 //ë©”ë‰´ ì´ë¦„
+	WndClass.lpszClassName	= lpszClass;						 //í´ë˜ìŠ¤ ì´ë¦„
+	RegisterClass(&WndClass);									 //ì•ì„œ ì •ì˜í•œ ìœˆë„ìš° í´ë˜ìŠ¤ì˜ ì£¼ì†Œ // os ì—ë‹¤ê°€ ì§€ê¸ˆ ì´ í´ë˜ìŠ¤ë¥¼ ë“±ë¡ì‹œí‚´ 
 
-	g_hinstance = hInstance; // Àü¿ª ÀÎ½ºÅÏ½º ÇÚµé
-	hwnd = CreateWindow(lpszClass,								 //À©µµ¿ì°¡ »ı¼ºµÇ¸é ÇÚµé(hwnd)ÀÌ ¹İÈ¯		//½ÇÁ¦ À©µµ¿ì¸¦ ¸¸µé±â ½ÃÀÛ 
-		lpszClass,												 //À©µµ¿ì Å¬·¡½º, Å¸ÀÌÆ² ÀÌ¸§
-		WS_OVERLAPPEDWINDOW,									 //À©µµ¿ì ½ºÅ¸ÀÏ
-		CW_USEDEFAULT,											 //À©µµ¿ì À§Ä¡, xÁÂÇ¥
-		CW_USEDEFAULT,											 //À©µµ¿ì À§Ä¡, yÁÂÇ¥
-		CW_USEDEFAULT,											 //À©µµ¿ì Æø   
-		CW_USEDEFAULT,											 //À©µµ¿ì ³ôÀÌ   
-		NULL,													 //ºÎ¸ğ À©µµ¿ì ÇÚµé	 
-		NULL,													 //¸Ş´º ÇÚµé
-		hInstance,    											 //ÀÀ¿ë ÇÁ·Î±×·¥ ID
-		NULL     												 //»ı¼ºµÈ À©µµ¿ì Á¤º¸
+	g_hinstance = hInstance; // ì „ì—­ ì¸ìŠ¤í„´ìŠ¤ í•¸ë“¤
+	hwnd = CreateWindow(lpszClass,								 //ìœˆë„ìš°ê°€ ìƒì„±ë˜ë©´ í•¸ë“¤(hwnd)ì´ ë°˜í™˜		//ì‹¤ì œ ìœˆë„ìš°ë¥¼ ë§Œë“¤ê¸° ì‹œì‘ 
+		lpszClass,												 //ìœˆë„ìš° í´ë˜ìŠ¤, íƒ€ì´í‹€ ì´ë¦„
+		WS_OVERLAPPEDWINDOW,									 //ìœˆë„ìš° ìŠ¤íƒ€ì¼
+		CW_USEDEFAULT,											 //ìœˆë„ìš° ìœ„ì¹˜, xì¢Œí‘œ
+		CW_USEDEFAULT,											 //ìœˆë„ìš° ìœ„ì¹˜, yì¢Œí‘œ
+		CW_USEDEFAULT,											 //ìœˆë„ìš° í­   
+		CW_USEDEFAULT,											 //ìœˆë„ìš° ë†’ì´   
+		NULL,													 //ë¶€ëª¨ ìœˆë„ìš° í•¸ë“¤	 
+		NULL,													 //ë©”ë‰´ í•¸ë“¤
+		hInstance,    											 //ì‘ìš© í”„ë¡œê·¸ë¨ ID
+		NULL     												 //ìƒì„±ëœ ìœˆë„ìš° ì •ë³´
 		);
-	ShowWindow(hwnd, nCmdShow);									 //À©µµ¿ìÀÇ È­¸é Ãâ·Â
-	UpdateWindow(hwnd);											 //O/S ¿¡ WM_PAINT ¸Ş½ÃÁö Àü¼Û
+	ShowWindow(hwnd, nCmdShow);									 //ìœˆë„ìš°ì˜ í™”ë©´ ì¶œë ¥
+	UpdateWindow(hwnd);											 //O/S ì— WM_PAINT ë©”ì‹œì§€ ì „ì†¡
 
-	while(GetMessage(&msg, NULL, 0, 0))							 //WinProc()¿¡¼­ PostQuitMessage() È£Ãâ ¶§±îÁö Ã³¸®
+	while(GetMessage(&msg, NULL, 0, 0))							 //WinProc()ì—ì„œ PostQuitMessage() í˜¸ì¶œ ë•Œê¹Œì§€ ì²˜ë¦¬
 	{															 // 
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);									 //WinMain -> WinProc  
@@ -63,7 +63,7 @@ BITMAPINFOHEADER infohead;
 BITMAPFILEHEADER hf;
 BYTE* Data;
 float xPos=0.0, yPos=0.0;
-TCHAR lpstrFile[100], lpstrFile2[100];//ÆÄÀÏÀÌ¸§ ÀúÀåÀ§ÇÔ
+TCHAR lpstrFile[100], lpstrFile2[100];//íŒŒì¼ì´ë¦„ ì €ì¥ìœ„í•¨
 LinkedList control;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)     
@@ -74,7 +74,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 	memset(&OFN, 0, sizeof(OPENFILENAME));
 	OFN.lStructSize = sizeof(OPENFILENAME);
 	OFN.hwndOwner = hwnd;
-	OFN.lpstrFilter = TEXT("ºñÆ®¸Ê ÆÄÀÏ(.bmp)\0*.bmp\0VI ÆÄÀÏ(.vi)\0*.vi\0¸ğµçÆÄÀÏ(*.*)\0*.*\0");
+	OFN.lpstrFilter = TEXT("ë¹„íŠ¸ë§µ íŒŒì¼(.bmp)\0*.bmp\0VI íŒŒì¼(.vi)\0*.vi\0ëª¨ë“ íŒŒì¼(*.*)\0*.*\0");
 	OFN.lpstrFile = lpstrFile;
 	OFN.Flags = OFN_NOCHANGEDIR;
 	OFN.nMaxFile = MAX_PATH;
@@ -88,21 +88,21 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		backMemDC=CreateCompatibleDC(hdc); 
 		MemDC=CreateCompatibleDC(hdc);
 
-		OldhBit=CreateCompatibleBitmap(hdc, rt.right, rt.bottom); //µµÈ­Áö ÁØºñ!
+		OldhBit=CreateCompatibleBitmap(hdc, rt.right, rt.bottom); //ë„í™”ì§€ ì¤€ë¹„!
 		hBit=CreateCompatibleBitmap(hdc, rt.right, rt.bottom);
 
-		(HBITMAP)SelectObject(backMemDC, OldhBit); //µµÈ­Áö ¼¼ÆÃ
+		(HBITMAP)SelectObject(backMemDC, OldhBit); //ë„í™”ì§€ ì„¸íŒ…
 		(HBITMAP)SelectObject(MemDC, hBit);
 
-		FillRect(backMemDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH)); //µµÈ­Áö »ö º¯°æ 
+		FillRect(backMemDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH)); //ë„í™”ì§€ ìƒ‰ ë³€ê²½ 
 		FillRect(MemDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH)); 
 		max_width=rt.right;
 		max_height=rt.bottom;
 
 		hpen = CreatePen(PS_SOLID, size, 0x000000); // pen
 		old_hpen = (HPEN)SelectObject(MemDC, hpen);
-		hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brush¸¦ »ç¿ëÇÏÁö ¾ÊÀ½
-		old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+		hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brushë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+		old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 
 		control.count=0;
 		//control.head_ptr = new vi;
@@ -113,7 +113,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		break;
 
 	//case WM_SIZE:
-	//	GetClientRect(hwnd, &rt); // right °¡·Î, bottom ¼¼·Î
+	//	GetClientRect(hwnd, &rt); // right ê°€ë¡œ, bottom ì„¸ë¡œ
 	//	if(max_width < rt.right || max_height < rt.bottom){
 	//					
 	//		if(max_width < rt.right){
@@ -127,13 +127,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 	//			mrt.bottom = rt.bottom;
 	//		}
 	//		sizeDC=CreateCompatibleDC(hdc);
-	//		sizeHBIT=CreateCompatibleBitmap(hdc, max_width, max_height); // µµÈ­Áö »ı¼º
-	//		(HBITMAP)SelectObject(sizeDC, sizeHBIT); // µµÈ­Áö ¼¼ÆÃ
+	//		sizeHBIT=CreateCompatibleBitmap(hdc, max_width, max_height); // ë„í™”ì§€ ìƒì„±
+	//		(HBITMAP)SelectObject(sizeDC, sizeHBIT); // ë„í™”ì§€ ì„¸íŒ…
 	//		FillRect(sizeDC, &rt, (HBRUSH)GetStockObject(WHITE_BRUSH));
-	//		// »çÀÌÁî »ı¼º
+	//		// ì‚¬ì´ì¦ˆ ìƒì„±
 	//		BitBlt(sizeDC, 0, 0, old_wi, old_he, backMemDC, 0, 0, SRCCOPY);
 	//		
-	//		// »çÀÌÁî·Î ¹é¾÷
+	//		// ì‚¬ì´ì¦ˆë¡œ ë°±ì—…
 	//		DeleteDC(backMemDC);
 	//		backMemDC=CreateCompatibleDC(hdc);
 	//			OldhBit=CreateCompatibleBitmap(hdc, rt.right, rt.bottom);
@@ -266,45 +266,45 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 				break;
 			}
 			break;
-		case(ID_FILL_NON): // Ã¤¿ì±â
+		case(ID_FILL_NON): // ì±„ìš°ê¸°
 			brus=0;
-			hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brush¸¦ »ç¿ëÇÏÁö ¾ÊÀ½
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brushë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;			
 		case(ID_FILL_BLACK):
 			brus=1;
 			b_color=0x000000;
-			hbrush = CreateSolidBrush(0x000000); // ´Ü»öÀÇ brush¸¦ »ı¼º
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = CreateSolidBrush(0x000000); // ë‹¨ìƒ‰ì˜ brushë¥¼ ìƒì„±
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;			
 		case(ID_FILL_WHITE):
 			brus=1;
 			b_color=0xffffff;
-			hbrush = CreateSolidBrush(0xffffff); // ´Ü»öÀÇ brush¸¦ »ı¼º
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = CreateSolidBrush(0xffffff); // ë‹¨ìƒ‰ì˜ brushë¥¼ ìƒì„±
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;			
 		case(ID_FILL_RED):
 			brus=1;
 			b_color=0x0000ff;
-			hbrush = CreateSolidBrush(0x0000ff); // ´Ü»öÀÇ brush¸¦ »ı¼º
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = CreateSolidBrush(0x0000ff); // ë‹¨ìƒ‰ì˜ brushë¥¼ ìƒì„±
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;			
 		case(ID_FILL_GREEN):
 			brus=1;
 			b_color=0x00ff00;
-			hbrush = CreateSolidBrush(0x00ff00); // ´Ü»öÀÇ brush¸¦ »ı¼º
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = CreateSolidBrush(0x00ff00); // ë‹¨ìƒ‰ì˜ brushë¥¼ ìƒì„±
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;			
 		case(ID_FILL_BLUE):
 			brus=1;
 			b_color=0x00ff0000;
-			hbrush = CreateSolidBrush(0xff0000); // ´Ü»öÀÇ brush¸¦ »ı¼º
-			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+			hbrush = CreateSolidBrush(0xff0000); // ë‹¨ìƒ‰ì˜ brushë¥¼ ìƒì„±
+			old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 			DeleteObject(old_hbrush);
 			break;
 		case(ID_LINESHAPE_SOLIDLINE):
@@ -321,12 +321,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			break;
 
 		case(ID_MENU_LOAD):
-			//¿­±â
+			//ì—´ê¸°
 			int widthstep;
 			PatBlt(MemDC, 0, 0, rt.right, rt.bottom, WHITENESS);	
 			InvalidateRect(hwnd, NULL, TRUE);
 
-			if(GetOpenFileName(&OFN) != 0) //´ÙÀÌ¾ó·Î±× ¿­±â
+			if(GetOpenFileName(&OFN) != 0) //ë‹¤ì´ì–¼ë¡œê·¸ ì—´ê¸°
 			{
 				//@@@@@
 				if(control.count != 0){
@@ -341,55 +341,55 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 				}
 				WORD checkbm;
 				fp  = CreateFile(OFN.lpstrFile, GENERIC_READ, 0, NULL,OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-				ReadFile(fp, &checkbm, 2, &readn, NULL); //2¹ÙÀÌÆ®
+				ReadFile(fp, &checkbm, 2, &readn, NULL); //2ë°”ì´íŠ¸
 				if(checkbm == 0x4d42){
 					CloseHandle(fp);
 
 					fp  = CreateFile(OFN.lpstrFile, GENERIC_READ, 0, NULL,OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
-					if (fp != INVALID_HANDLE_VALUE) // ÆÄÀÏÀÇ Á¸Àç ¿©ºÎ È®ÀÎ ½ÇÆĞÇÏ¸é INVALID_HANDLE_VALUE¸¦ ¹İÈ­ÇÑ´Ù.
+					if (fp != INVALID_HANDLE_VALUE) // íŒŒì¼ì˜ ì¡´ì¬ ì—¬ë¶€ í™•ì¸ ì‹¤íŒ¨í•˜ë©´ INVALID_HANDLE_VALUEë¥¼ ë°˜í™”í•œë‹¤.
 					{
-						ReadFile(fp,&hf, sizeof(BITMAPFILEHEADER), &readn, NULL); //14¹ÙÀÌÆ®
-						ReadFile(fp,&infohead, sizeof(BITMAPINFOHEADER), &readn, NULL); //40¹ÙÀÌÆ®
+						ReadFile(fp,&hf, sizeof(BITMAPFILEHEADER), &readn, NULL); //14ë°”ì´íŠ¸
+						ReadFile(fp,&infohead, sizeof(BITMAPINFOHEADER), &readn, NULL); //40ë°”ì´íŠ¸
 
 						xPos = 0;
-						yPos = infohead.biHeight - 1;// ¾Æ·¡ºÎÅÍ ±×¸±°Å°í ¹è¿­ÀÌ´Ï±î 1»©ÁÜ
+						yPos = infohead.biHeight - 1;// ì•„ë˜ë¶€í„° ê·¸ë¦´ê±°ê³  ë°°ì—´ì´ë‹ˆê¹Œ 1ë¹¼ì¤Œ
 
 
-						if (infohead.biBitCount == 1) // ´ÜÀÏ ºñÆ®
+						if (infohead.biBitCount == 1) // ë‹¨ì¼ ë¹„íŠ¸
 						{
-							RGBQUAD       pRGB[2];//ÆÈ·¹Æ®
-							ReadFile(fp, pRGB, sizeof(RGBQUAD) * 2, &readn, NULL);//ÆÈ·¹Æ®ÀÇ Á¤º¸¸¦ °¡Á®¿È
+							RGBQUAD       pRGB[2];//íŒ”ë ˆíŠ¸
+							ReadFile(fp, pRGB, sizeof(RGBQUAD) * 2, &readn, NULL);//íŒ”ë ˆíŠ¸ì˜ ì •ë³´ë¥¼ ê°€ì ¸ì˜´
 							Data = new BYTE[infohead.biSizeImage];
 
-							ReadFile(fp, Data, infohead.biSizeImage, &readn, NULL);//¿ì¼± ´ÙÀúÀå
+							ReadFile(fp, Data, infohead.biSizeImage, &readn, NULL);//ìš°ì„  ë‹¤ì €ì¥
 
-							widthstep = 32 - (infohead.biWidth % 32); // widthstepÀÇ °³¼ö
-							if(widthstep==32) // 32ÀÏ °æ¿ì 0
+							widthstep = 32 - (infohead.biWidth % 32); // widthstepì˜ ê°œìˆ˜
+							if(widthstep==32) // 32ì¼ ê²½ìš° 0
 								widthstep=0;
 
-							BYTE half; // 1ºñÆ®ÀÌ¹Ç·Î 8°³·Î ÂÉ°³¾ßÇÔ
+							BYTE half; // 1ë¹„íŠ¸ì´ë¯€ë¡œ 8ê°œë¡œ ìª¼ê°œì•¼í•¨
 							BYTE bit = 128;//0b 1000 0000
 							int count=0;
 
-							for(int i=0 ; i < infohead.biSizeImage ; i++) // ÇÈ¼¿ºñÆ®ÀÇ °³¼ö ¸¸Å­ ¹İº¹
+							for(int i=0 ; i < infohead.biSizeImage ; i++) // í”½ì…€ë¹„íŠ¸ì˜ ê°œìˆ˜ ë§Œí¼ ë°˜ë³µ
 							{
-								for(int j=0 ; j<8 ; j++) // ¹ÙÀÌÆ®¸¦ ÀĞ¾î¿ÔÀ¸´Ï 8¹ø ¹İº¹
+								for(int j=0 ; j<8 ; j++) // ë°”ì´íŠ¸ë¥¼ ì½ì–´ì™”ìœ¼ë‹ˆ 8ë²ˆ ë°˜ë³µ
 								{
-									half = Data[i] & bit; // Ã¹¹øÂ° ¹ÙÀÌÆ®¿¡¼­ ¸Ç ¾Õ ºñÆ® ÀĞ¾î¿À±â
-									half = half >> 7; // Ã¹¹øÂ° ÀÚ¸®¼ö·Î ÀÌµ¿, Áï ÆÈ·¹Æ® ÀÎµ¦½ºÀÓ
-									SetPixel(MemDC, xPos, yPos, RGB(pRGB[half].rgbRed, pRGB[half].rgbGreen, pRGB[half].rgbBlue)); // »ö»ó µ¥ÀÌÅÍ ÀÔ·Â
-									xPos++; // ´ÙÀ½ ÇÈ¼¿·Î ÀÌµ¿
-									if(xPos >= infohead.biWidth) // °¡·ÎÆø¸¸Å­ Ãâ·Â ¿Ï·á½Ã¿¡
+									half = Data[i] & bit; // ì²«ë²ˆì§¸ ë°”ì´íŠ¸ì—ì„œ ë§¨ ì• ë¹„íŠ¸ ì½ì–´ì˜¤ê¸°
+									half = half >> 7; // ì²«ë²ˆì§¸ ìë¦¬ìˆ˜ë¡œ ì´ë™, ì¦‰ íŒ”ë ˆíŠ¸ ì¸ë±ìŠ¤ì„
+									SetPixel(MemDC, xPos, yPos, RGB(pRGB[half].rgbRed, pRGB[half].rgbGreen, pRGB[half].rgbBlue)); // ìƒ‰ìƒ ë°ì´í„° ì…ë ¥
+									xPos++; // ë‹¤ìŒ í”½ì…€ë¡œ ì´ë™
+									if(xPos >= infohead.biWidth) // ê°€ë¡œí­ë§Œí¼ ì¶œë ¥ ì™„ë£Œì‹œì—
 									{
-										yPos --; // ´ÙÀ½ÁÙ·Î ÀÌµ¿
+										yPos --; // ë‹¤ìŒì¤„ë¡œ ì´ë™
 										xPos = 0; 
 									}
-									count++; // ¸î°³ÀÇ ÇÈ¼¿À» Ãâ·ÂÇŞ´Â°¡?
-									if(count == infohead.biWidth) // °¡·ÎÆø¸¸Å­ Ãâ·Â ¿Ï·á½Ã¿¡
+									count++; // ëª‡ê°œì˜ í”½ì…€ì„ ì¶œë ¥í–‡ëŠ”ê°€?
+									if(count == infohead.biWidth) // ê°€ë¡œí­ë§Œí¼ ì¶œë ¥ ì™„ë£Œì‹œì—
 									{
-										count = 0; // ÃÊ±âÈ­
-										i += (widthstep / 8); // widthstep ¹ÙÀÌÆ®¸¸Å­ °Ç³Ê ¶Ù±â
+										count = 0; // ì´ˆê¸°í™”
+										i += (widthstep / 8); // widthstep ë°”ì´íŠ¸ë§Œí¼ ê±´ë„ˆ ë›°ê¸°
 										break;
 									}
 									Data[i] = Data[i] << 1;
@@ -397,32 +397,32 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							}
 						}
 
-						else if (infohead.biBitCount == 8) // 8ºñÆ®
+						else if (infohead.biBitCount == 8) // 8ë¹„íŠ¸
 						{
-							RGBQUAD       pRGB[256];//ÆÈ·¹Æ®
+							RGBQUAD       pRGB[256];//íŒ”ë ˆíŠ¸
 							ReadFile(fp, pRGB, sizeof(RGBQUAD) * 256, &readn, NULL);
 							Data = new BYTE[infohead.biSizeImage];
 
 							ReadFile(fp, Data, infohead.biSizeImage, &readn, NULL);
 
-							widthstep = 4 - (infohead.biWidth % 4); // widthstepÀÇ °³¼ö
-							if(widthstep==4) // 4ÀÏ °æ¿ì 0
+							widthstep = 4 - (infohead.biWidth % 4); // widthstepì˜ ê°œìˆ˜
+							if(widthstep==4) // 4ì¼ ê²½ìš° 0
 								widthstep=0;
 
-							for(int i=0 ; i < infohead.biSizeImage ; i++) // ÇÈ¼¿ ¹ÙÀÌÆ® ¸¸Å­ ¹İº¹
+							for(int i=0 ; i < infohead.biSizeImage ; i++) // í”½ì…€ ë°”ì´íŠ¸ ë§Œí¼ ë°˜ë³µ
 							{
-								SetPixel(MemDC, xPos, yPos, RGB(pRGB[Data[i]].rgbRed, pRGB[Data[i]].rgbGreen, pRGB[Data[i]].rgbBlue)); // »ö»ó µ¥ÀÌÅÍ ÀÔ·Â
-								xPos++; // ´ÙÀ½ ÇÈ¼¿·Î ÀÌµ¿
-								if(xPos >= infohead.biWidth) // °¡·ÎÆø¸¸Å­ Ãâ·Â ¿Ï·á½Ã¿¡
+								SetPixel(MemDC, xPos, yPos, RGB(pRGB[Data[i]].rgbRed, pRGB[Data[i]].rgbGreen, pRGB[Data[i]].rgbBlue)); // ìƒ‰ìƒ ë°ì´í„° ì…ë ¥
+								xPos++; // ë‹¤ìŒ í”½ì…€ë¡œ ì´ë™
+								if(xPos >= infohead.biWidth) // ê°€ë¡œí­ë§Œí¼ ì¶œë ¥ ì™„ë£Œì‹œì—
 								{
-									yPos --; // ´ÙÀ½ÁÙ·Î ÀÌµ¿
+									yPos --; // ë‹¤ìŒì¤„ë¡œ ì´ë™
 									xPos = 0; 
 									i += widthstep;
 								}
 							}
 						}
 
-						else if (infohead.biBitCount == 24) // 24ºñÆ® ÀÏ¶§ ÇÑ°³ÀÇ ÇÈ¼¿ = 3¹ÙÀÌÆ®
+						else if (infohead.biBitCount == 24) // 24ë¹„íŠ¸ ì¼ë•Œ í•œê°œì˜ í”½ì…€ = 3ë°”ì´íŠ¸
 						{
 							int count=0;
 
@@ -431,33 +431,33 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 								widthstep = 0;
 
 							Data = new BYTE[infohead.biSizeImage];
-							ReadFile(fp, Data, infohead.biSizeImage, &readn, NULL); // ÇÈ¼¿ µ¥ÀÌÅÍ¸¦ ¹ÙÀÌÆ® ´ÜÀ§·Î ¹è¿­¿¡ ÀúÀå
+							ReadFile(fp, Data, infohead.biSizeImage, &readn, NULL); // í”½ì…€ ë°ì´í„°ë¥¼ ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ ë°°ì—´ì— ì €ì¥
 
-							for (int i = 0; i < infohead.biWidth * infohead.biHeight; i++) // ÇÈ¼¿ °³¼ö ¸¸Å­ ¹İº¹
+							for (int i = 0; i < infohead.biWidth * infohead.biHeight; i++) // í”½ì…€ ê°œìˆ˜ ë§Œí¼ ë°˜ë³µ
 							{
-								if (i != 0 && i % infohead.biWidth == 0 ) // ÁÙ ³Ñ±è
+								if (i != 0 && i % infohead.biWidth == 0 ) // ì¤„ ë„˜ê¹€
 								{
 									xPos = 0;
 									yPos--;
-									count++; // ¸î°³ÀÇ ÁÙÀ» Ãâ·ÂÇß´Â°¡? ³ªÁß¿¡ widthstep°³¼ö¸¦ °è»êÇÏ±â À§ÇÔ
+									count++; // ëª‡ê°œì˜ ì¤„ì„ ì¶œë ¥í–ˆëŠ”ê°€? ë‚˜ì¤‘ì— widthstepê°œìˆ˜ë¥¼ ê³„ì‚°í•˜ê¸° ìœ„í•¨
 								}
-								SetPixel(MemDC, xPos, yPos, RGB(Data[(i*3)+(count*widthstep)+2], Data[(i*3)+(count*widthstep)+1], Data[(i*3)+(count*widthstep)]));//±×¸®±â
-								// i*3 Àº 1ÇÈ¼¿ÀÌ 3¹ÙÀÌÆ®¶ó¼­, count*widthstep Çã¼öÀÇ °³¼ö¸¦ °è»êÇÏ±â À§ÇÔ, +2 +1Àº bgr ¼ø¼­¶ó¼­
-								xPos++; // ´ÙÀ½ ÇÈ¼¿
+								SetPixel(MemDC, xPos, yPos, RGB(Data[(i*3)+(count*widthstep)+2], Data[(i*3)+(count*widthstep)+1], Data[(i*3)+(count*widthstep)]));//ê·¸ë¦¬ê¸°
+								// i*3 ì€ 1í”½ì…€ì´ 3ë°”ì´íŠ¸ë¼ì„œ, count*widthstep í—ˆìˆ˜ì˜ ê°œìˆ˜ë¥¼ ê³„ì‚°í•˜ê¸° ìœ„í•¨, +2 +1ì€ bgr ìˆœì„œë¼ì„œ
+								xPos++; // ë‹¤ìŒ í”½ì…€
 							}
 						}
 						InvalidateRect(hwnd, NULL, FALSE);
 					}
 					CloseHandle(fp);
 				}
-				else // vi ÆÄÀÏ ¿­±â
+				else // vi íŒŒì¼ ì—´ê¸°
 				{
 					CloseHandle(fp);
 					fp  = CreateFile(OFN.lpstrFile, GENERIC_READ, 0, NULL,OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 					DWORD tcount;
 					ReadFile(fp, &tcount, 4, &readn, NULL); 
-					control.count = tcount; // ±¸Á¶Ã¼ °³¼ö ÀĞ¾î¿À±â
-					control.head_ptr = new vi; // µ¿Àû ÇÒ´ç
+					control.count = tcount; // êµ¬ì¡°ì²´ ê°œìˆ˜ ì½ì–´ì˜¤ê¸°
+					control.head_ptr = new vi; // ë™ì  í• ë‹¹
 					control.count = 0; 
 					control.now_ptr = control.head_ptr;
 					while(tcount>0){
@@ -479,15 +479,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							MoveToEx(MemDC, control.now_ptr->old.x, control.now_ptr->old.y, NULL);
 							LineTo(MemDC, control.now_ptr->now.x, control.now_ptr->now.y);
 						}
-						else if(control.now_ptr -> vshape == 2){ // ¿ø
+						else if(control.now_ptr -> vshape == 2){ // ì›
 							if(control.now_ptr->flag_fill == 1) {
 								hbrush = CreateSolidBrush(control.now_ptr->fill_color);
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
-							else{ //ºê·¯½Ã 0
-								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brush¸¦ »ç¿ëÇÏÁö ¾ÊÀ½
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+							else{ //ë¸ŒëŸ¬ì‹œ 0
+								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brushë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
 							p_color = control.now_ptr->line_color;
@@ -497,15 +497,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							MoveToEx(MemDC, control.now_ptr->old.x,control.now_ptr->old.y, NULL);
 							Ellipse(MemDC, control.now_ptr->old.x, control.now_ptr->old.y, control.now_ptr->now.x, control.now_ptr->now.y);
 						}
-						else if(control.now_ptr -> vshape == 3) {// »ï°¢Çü
+						else if(control.now_ptr -> vshape == 3) {// ì‚¼ê°í˜•
 							if(control.now_ptr->flag_fill == 1) {
 								hbrush = CreateSolidBrush(control.now_ptr->fill_color);
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
-							else{ //ºê·¯½Ã 0
-								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brush¸¦ »ç¿ëÇÏÁö ¾ÊÀ½
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+							else{ //ë¸ŒëŸ¬ì‹œ 0
+								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brushë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
 							p_color = control.now_ptr->line_color;
@@ -520,15 +520,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							gag[2].y=control.now_ptr->now.y;
 							Polygon(MemDC, gag, 3);
 						}
-						else if(control.now_ptr -> vshape == 4) { // »ç°¢Çü
+						else if(control.now_ptr -> vshape == 4) { // ì‚¬ê°í˜•
 							if(control.now_ptr->flag_fill == 1) {
 								hbrush = CreateSolidBrush(control.now_ptr->fill_color);
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
-							else{ //ºê·¯½Ã 0
-								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brush¸¦ »ç¿ëÇÏÁö ¾ÊÀ½
-								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brush¸¦ dc¿¡ ÁöÁ¤
+							else{ //ë¸ŒëŸ¬ì‹œ 0
+								hbrush = (HBRUSH)GetStockObject(NULL_BRUSH); // brushë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+								old_hbrush = (HBRUSH)SelectObject(MemDC, hbrush); // brushë¥¼ dcì— ì§€ì •
 								DeleteObject(old_hbrush);
 							}
 							p_color = control.now_ptr->line_color;
@@ -544,7 +544,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							MoveToEx(MemDC, control.now_ptr->old.x, control.now_ptr->old.y, NULL);
 							LineTo(MemDC, control.now_ptr->now.x, control.now_ptr->now.y);
 						}
-						control.now_ptr->ptr = new vi; // µ¿ÀûÇÒ´ç ÇÑ¹ø ´õ
+						control.now_ptr->ptr = new vi; // ë™ì í• ë‹¹ í•œë²ˆ ë”
 						control.now_ptr = control.now_ptr->ptr;
 					}
 					control.now_ptr -> ptr = NULL;
@@ -553,7 +553,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			}
 			else
 			{
-				MessageBox(hwnd, TEXT("ºñÆ®¸Ê ÆÄÀÏÀ» ¿­Áö ¸øÇß½À´Ï´Ù."), 0, MB_OK);
+				MessageBox(hwnd, TEXT("ë¹„íŠ¸ë§µ íŒŒì¼ì„ ì—´ì§€ ëª»í–ˆìŠµë‹ˆë‹¤."), 0, MB_OK);
 			}
 			break;
 			
@@ -562,52 +562,52 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 				memset(&SFN,0,sizeof(OPENFILENAME));
 				SFN.lStructSize = sizeof(OPENFILENAME);
 				SFN.hwndOwner = hwnd;
-				SFN.lpstrFilter = TEXT("24ºñÆ® ºñÆ®¸Ê(*.bmp)\0*.bmp\08ºñÆ® ºñÆ®¸Ê(*.bmp)\0*.bmp\0´Ü»ö ºñÆ®¸Ê ÆÄÀÏ(*.bmp)\0*.bmp\0VI ÆÄÀÏ(*.vi)\0*.vi\0¸ğµç ÆÄÀÏ(*.*)\0*.*\0");
+				SFN.lpstrFilter = TEXT("24ë¹„íŠ¸ ë¹„íŠ¸ë§µ(*.bmp)\0*.bmp\08ë¹„íŠ¸ ë¹„íŠ¸ë§µ(*.bmp)\0*.bmp\0ë‹¨ìƒ‰ ë¹„íŠ¸ë§µ íŒŒì¼(*.bmp)\0*.bmp\0VI íŒŒì¼(*.vi)\0*.vi\0ëª¨ë“  íŒŒì¼(*.*)\0*.*\0");
 				SFN.lpstrDefExt = TEXT("txt");
 				SFN.lpstrFile = lpstrFile2;
 				SFN.nMaxFile = 100; 
 				int b, g, r;
 				
-				if(GetSaveFileName(&SFN) != 0) // ´ÙÀÌ¾ó·Î±× ¿­±â
+				if(GetSaveFileName(&SFN) != 0) // ë‹¤ì´ì–¼ë¡œê·¸ ì—´ê¸°
 				{
 					int size, r, g, b;
 					DWORD Size;
-					TCHAR lpstrFile[100]; // ÆÄÀÏÀÌ¸§ ÀúÀåÀ§ÇÔ
+					TCHAR lpstrFile[100]; // íŒŒì¼ì´ë¦„ ì €ì¥ìœ„í•¨
 					HANDLE fp; 
 					DWORD readn;  
 					BITMAPINFO *pih;
 
-					GetObject(hBit, sizeof(BITMAP), &map); // ÆÄÀÏ Çì´õ º¹»ç
+					GetObject(hBit, sizeof(BITMAP), &map); // íŒŒì¼ í—¤ë” ë³µì‚¬
 
-					hf.bfType = 0x4d42;// ÆÄÀÏÀÇ ÇüÅÂ¸¦ ÁöÁ¤ÇÏ´Â ¸ÅÁ÷ ³Ñ¹öÀÌ¸ç ¹İµå±â BM(bmp ÆÄÀÏÀÇ ÀüÃ¼ Å©±â)ÀÌ¾î¾ß ÇÑ´Ù(0x42, 0x4d)
-					hf.bfReserved1 = 0;// ¿¹ºñ
-					hf.bfReserved2 = 0;// ¿¹ºñ
+					hf.bfType = 0x4d42;// íŒŒì¼ì˜ í˜•íƒœë¥¼ ì§€ì •í•˜ëŠ” ë§¤ì§ ë„˜ë²„ì´ë©° ë°˜ë“œê¸° BM(bmp íŒŒì¼ì˜ ì „ì²´ í¬ê¸°)ì´ì–´ì•¼ í•œë‹¤(0x42, 0x4d)
+					hf.bfReserved1 = 0;// ì˜ˆë¹„
+					hf.bfReserved2 = 0;// ì˜ˆë¹„
 
-					infohead.biSize = sizeof(BITMAPINFOHEADER);				// ±¸Á¶Ã¼ÀÇ Å©±â
-					infohead.biWidth = map.bmWidth;							// ºñÆ®¸Ê °¡·Î ÇÈ¼¿¼ö
-					infohead.biHeight = map.bmHeight;						// ºñÆ®¸Ê ¼¼·Î ÇÈ¼¿¼ö
-					infohead.biPlanes = 1;									// ÇÃ·¡ÀÎ °³¼ö¸¦ ³ªÅ¸³»´Âµ¥ ¹İµå½Ã 1·Î °íÁ¤µÇ¾îÀÖ¾î¾ßÇÑ´Ù
-					infohead.biCompression = BI_RGB;						// ¾ĞÃà¹æ½Ä->¾ĞÃàµÇÁö ¾ÊÀº ºñÆ®¸Ê (BI_RGB)
-					infohead.biXPelsPerMeter = 0;							// ¹ÌÅÍ´ç °¡·ÎÇÈ¼¿¼ö
-					infohead.biYPelsPerMeter = 0;							// ¹ÌÅÍ´ç ¼¼·ÎÇÈ¼¿¼ö
-					infohead.biClrUsed = 0;									// »ö»ó Å×ÀÌºíÁß ºñÆ®¸Ê¿¡¼­ »ç¿ëµÇ´Â »ö»ó ¼ö -> 0ÀÏ °æ¿ì ºñÆ®¸ÊÀº »ç¿ë °¡´ÉÇÑ ¸ğµç »ö»óÀ» ´Ù »ç¿ëÇÑ´Ù. 
-					infohead.biClrImportant = 0;							// ºñÆ®¸ÊÀ» Ãâ·ÂÇÏ´Âµ¥ ÇÊ¼öÀûÀÎ »ö»ó ¼ö -> 0ÀÏ °æ¿ì ºñÆ®¸ÊÀº »ç¿ë °¡´ÉÇÑ ¸ğµç »ö»óÀ» ´Ù »ç¿ëµÇ¾î¾ßÇÑ´Ù.
+					infohead.biSize = sizeof(BITMAPINFOHEADER);				// êµ¬ì¡°ì²´ì˜ í¬ê¸°
+					infohead.biWidth = map.bmWidth;							// ë¹„íŠ¸ë§µ ê°€ë¡œ í”½ì…€ìˆ˜
+					infohead.biHeight = map.bmHeight;						// ë¹„íŠ¸ë§µ ì„¸ë¡œ í”½ì…€ìˆ˜
+					infohead.biPlanes = 1;									// í”Œë˜ì¸ ê°œìˆ˜ë¥¼ ë‚˜íƒ€ë‚´ëŠ”ë° ë°˜ë“œì‹œ 1ë¡œ ê³ ì •ë˜ì–´ìˆì–´ì•¼í•œë‹¤
+					infohead.biCompression = BI_RGB;						// ì••ì¶•ë°©ì‹->ì••ì¶•ë˜ì§€ ì•Šì€ ë¹„íŠ¸ë§µ (BI_RGB)
+					infohead.biXPelsPerMeter = 0;							// ë¯¸í„°ë‹¹ ê°€ë¡œí”½ì…€ìˆ˜
+					infohead.biYPelsPerMeter = 0;							// ë¯¸í„°ë‹¹ ì„¸ë¡œí”½ì…€ìˆ˜
+					infohead.biClrUsed = 0;									// ìƒ‰ìƒ í…Œì´ë¸”ì¤‘ ë¹„íŠ¸ë§µì—ì„œ ì‚¬ìš©ë˜ëŠ” ìƒ‰ìƒ ìˆ˜ -> 0ì¼ ê²½ìš° ë¹„íŠ¸ë§µì€ ì‚¬ìš© ê°€ëŠ¥í•œ ëª¨ë“  ìƒ‰ìƒì„ ë‹¤ ì‚¬ìš©í•œë‹¤. 
+					infohead.biClrImportant = 0;							// ë¹„íŠ¸ë§µì„ ì¶œë ¥í•˜ëŠ”ë° í•„ìˆ˜ì ì¸ ìƒ‰ìƒ ìˆ˜ -> 0ì¼ ê²½ìš° ë¹„íŠ¸ë§µì€ ì‚¬ìš© ê°€ëŠ¥í•œ ëª¨ë“  ìƒ‰ìƒì„ ë‹¤ ì‚¬ìš©ë˜ì–´ì•¼í•œë‹¤.
 
-					if(SFN.nFilterIndex==1){ // 24ºñÆ® ÀÏ °æ¿ì
+					if(SFN.nFilterIndex==1){ // 24ë¹„íŠ¸ ì¼ ê²½ìš°
 
 						widthstep = 4 - (infohead.biWidth * 3 % 4);
 						if (widthstep == 4) 
 							widthstep = 0;
 
-						hf.bfSize = (widthstep * infohead.biHeight) + (infohead.biWidth * infohead.biHeight * 3) + 54;		// ºñÆ®¸Ê ÆÄÀÏ ÀüÃ¼ÀÇ Å©±â
-						hf.bfOffBits = 54;																					// ÇÈ¼¿ µ¥ÀÌÅÍÀÇ ½ÃÀÛ ÁÖ¼Ò
-						infohead.biBitCount = 24;																			// ÇÑ ÇÈ¼¿´ç ¸î °³ÀÇ ºñÆ®·Î ÀÌ·ç¾îÁö´Â°¡
+						hf.bfSize = (widthstep * infohead.biHeight) + (infohead.biWidth * infohead.biHeight * 3) + 54;		// ë¹„íŠ¸ë§µ íŒŒì¼ ì „ì²´ì˜ í¬ê¸°
+						hf.bfOffBits = 54;																					// í”½ì…€ ë°ì´í„°ì˜ ì‹œì‘ ì£¼ì†Œ
+						infohead.biBitCount = 24;																			// í•œ í”½ì…€ë‹¹ ëª‡ ê°œì˜ ë¹„íŠ¸ë¡œ ì´ë£¨ì–´ì§€ëŠ”ê°€
 						infohead.biSizeImage = hf.bfSize - 54;
-						// Çì´õ´Â ÀÌÁ¦ ¿Ï¼º
-						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // ÆÄÀÏ »ı¼º
+						// í—¤ë”ëŠ” ì´ì œ ì™„ì„±
+						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // íŒŒì¼ ìƒì„±
 
-						WriteFile(fp, &hf, sizeof(hf), &readn, NULL);// Çì´õ ÀÛ¼º
-						WriteFile(fp, &infohead, sizeof(infohead), &readn, NULL); // ÆÄÀÏÇì´õ ÀÛ¼º
+						WriteFile(fp, &hf, sizeof(hf), &readn, NULL);// í—¤ë” ì‘ì„±
+						WriteFile(fp, &infohead, sizeof(infohead), &readn, NULL); // íŒŒì¼í—¤ë” ì‘ì„±
 						COLORREF color;
 						for (int y = rt.bottom-1; y >= 0; y--)
 						{
@@ -631,17 +631,17 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 						}							
 						CloseHandle(fp);
 					}
-					else if (SFN.nFilterIndex==2){ // 8ºñÆ®(256»ö) ÀÏ °æ¿ì
+					else if (SFN.nFilterIndex==2){ // 8ë¹„íŠ¸(256ìƒ‰) ì¼ ê²½ìš°
 
 						widthstep = 4 - (infohead.biWidth % 4);
 						if (widthstep == 4) 
 							widthstep = 0;
-						// widthstep °è»ê ¿Ï·á
-						hf.bfSize = (widthstep * infohead.biHeight) + (infohead.biWidth * infohead.biHeight) + 1078;	// ºñÆ®¸Ê ÆÄÀÏ ÀüÃ¼ÀÇ Å©±â
-						hf.bfOffBits = 1078;																			// ÇÈ¼¿ µ¥ÀÌÅÍÀÇ ½ÃÀÛ ÁÖ¼Ò
-						infohead.biBitCount = 8;																		// ÇÑ ÇÈ¼¿´ç ¸î °³ÀÇ ºñÆ®·Î ÀÌ·ç¾îÁö´Â°¡
+						// widthstep ê³„ì‚° ì™„ë£Œ
+						hf.bfSize = (widthstep * infohead.biHeight) + (infohead.biWidth * infohead.biHeight) + 1078;	// ë¹„íŠ¸ë§µ íŒŒì¼ ì „ì²´ì˜ í¬ê¸°
+						hf.bfOffBits = 1078;																			// í”½ì…€ ë°ì´í„°ì˜ ì‹œì‘ ì£¼ì†Œ
+						infohead.biBitCount = 8;																		// í•œ í”½ì…€ë‹¹ ëª‡ ê°œì˜ ë¹„íŠ¸ë¡œ ì´ë£¨ì–´ì§€ëŠ”ê°€
 						infohead.biSizeImage = hf.bfSize - 1078;
-						// Çì´õ´Â ¿Ï¼º
+						// í—¤ë”ëŠ” ì™„ì„±
 						int temp_pal[1024]={0, 0, 0, 0, 0, 0, 128, 0, 0, 128, 0, 0, 0, 128, 128, 0, 128, 0, 0, 0, 128, 0, 128, 0, 128, 128, 0, 0, 192, 192, 192, 0, 192, 220, 192, 0, 240, 202, 166, 0, 0, 32, 64, 0, 0, 32, 96, 0, 0, 32, 128, 0, 0, 32, 160, 0, 0, 32, 192, 0, 0, 32, 224, 0, 0, 64, 0, 0, 0, 64, 32, 0, 0, 64, 64, 0, 0, 64, 96, 0, 0, 64, 128, 0, 0, 64, 160, 0, 0, 64, 192, 0, 0, 64, 224, 0, 0, 96, 0, 0, 0, 96, 32, 0, 0, 96, 64, 0, 0, 96, 96, 0, 0, 96, 128, 0, 0, 96, 160, 0, 0, 96, 192, 0, 0, 96, 224, 0, 0, 128, 0, 0, 0, 128, 32, 0, 0, 128, 64, 0, 0, 128, 96, 0, 0, 128, 128, 0, 0, 128, 160, 0, 0, 128, 192, 0, 0, 128, 224, 0, 0, 160, 0, 0, 0, 160, 32, 0, 0, 160, 64, 0, 0, 160, 96, 0, 0, 160, 128, 0, 0, 160, 160, 0, 0, 160, 192, 0, 0, 160, 224, 0, 0, 192, 0, 0, 0, 192, 32, 0, 0, 192, 64, 0, 0, 192, 96, 0, 0, 192, 128, 0, 0, 192, 160, 0, 0, 192, 192, 0, 0, 192, 224, 0, 0, 224, 0, 0, 0, 224, 32, 0, 0, 224, 64, 0, 0, 224, 96, 0, 0, 224, 128, 0, 0, 224, 160, 0, 0, 224, 192, 0, 0, 224, 224, 0, 64, 0, 0, 0, 64, 0, 32, 0, 64, 0, 64, 0, 64, 0, 96, 0, 64, 0, 128, 0, 64, 0, 160, 0, 64, 0, 192, 0, 64, 0, 224, 0, 64, 32, 0, 0, 64, 32, 32, 0, 64, 32, 64, 0, 64, 32,96, 0, 64, 32, 128, 0, 64, 32, 160, 0, 64, 32, 192, 0, 64, 32, 224, 0, 64, 64, 0, 0, 64, 64, 32, 0, 64, 64, 64, 0, 64, 64, 96, 0, 64, 64, 128, 0, 64, 64, 160, 0, 64, 64, 192, 0, 64, 64, 224, 0, 64, 96, 0, 0, 64, 96, 32, 0, 64, 96, 64, 0, 64, 96, 96, 0, 64, 96, 128, 0, 64, 96, 160, 0, 64, 96, 192, 0, 64, 96, 224, 0, 64, 128, 0, 0, 64, 128, 32, 0, 64, 128, 64, 0, 64, 128, 96, 0, 64, 128, 128, 0, 64, 128, 160, 0, 64, 128, 192, 0, 64, 128, 224, 0, 64, 160, 0, 0, 64, 160, 32, 0, 64, 160, 64, 0, 64, 160, 96, 0, 64, 160, 128, 0, 64, 160, 160, 0, 64, 160, 192, 0, 64, 160, 224, 0, 64, 192, 0, 0, 64, 192, 32, 0, 64, 192, 64, 0, 64, 192, 96, 0, 64, 192, 128, 0, 64, 192, 160, 0, 64, 192, 192, 0, 64, 192, 224, 0, 64, 224, 0, 0, 64, 224, 32, 0, 64, 224, 64, 0, 64, 224, 96, 0, 64, 224, 128, 0, 64, 224, 160, 0, 64, 224, 192, 0, 64, 224, 224, 0, 128, 0, 0, 0, 128, 0, 32, 0, 128, 0, 64, 0, 128, 0, 96, 0, 128, 0, 128, 0, 128, 0, 160, 0, 128, 0, 192, 0, 128, 0, 224, 0, 128, 32, 0, 0, 128, 32, 32, 0, 128, 32, 64, 0, 128, 32, 96, 0, 128, 32, 128, 0, 128, 32, 160, 0, 128, 32, 192, 0, 128, 32, 224, 0, 128, 64, 0, 0, 128, 64, 32, 0, 128, 64, 64, 0, 128, 64, 96, 0, 128, 64, 128, 0, 128, 64, 160, 0, 128, 64, 192, 0, 128, 64, 224, 0, 128, 96, 0, 0, 128, 96, 32, 0, 128, 96, 64, 0, 128, 96, 96, 0, 128, 96, 128, 0, 128, 96, 160, 0, 128, 96, 192, 0, 128, 96, 224, 0, 128, 128, 0, 0, 128, 128, 32, 0, 128, 128, 64, 0, 128, 128, 96, 0, 128, 128, 128, 0, 128, 128, 160, 0, 128, 128, 192, 0, 128, 128, 224, 0, 128, 160, 0, 0, 128, 160, 32, 0, 128, 160, 64, 0, 128, 160, 96, 0, 128, 160, 128, 0, 128, 160, 160, 0, 128, 160, 192, 0, 128, 160, 224, 0, 128, 192, 0, 0, 128, 192, 32, 0, 128, 192, 64, 0, 128, 192, 96, 0, 128, 192, 128, 0, 128, 192, 160, 0, 128, 192, 192, 0, 128, 192, 224, 0, 128, 224, 0, 0, 128, 224, 32, 0, 128, 224, 64, 0, 128, 224, 96, 0, 128, 224, 128, 0, 128, 224, 160, 0, 128, 224, 192, 0, 128, 224, 224, 0, 192, 0, 0, 0, 192, 0, 32, 0, 192, 0, 64, 0, 192, 0, 96, 0, 192, 0, 128, 0, 192, 0, 160, 0, 192, 0, 192, 0, 192, 0, 224, 0, 192, 32, 0, 0, 192, 32, 32, 0, 192, 32, 64, 0, 192, 32, 96, 0, 192, 32, 128, 0, 192, 32, 160, 0, 192, 32, 192, 0, 192, 32, 224, 0, 192, 64, 0, 0, 192, 64, 32, 0, 192, 64, 64, 0, 192, 64, 96, 0, 192, 64, 128, 0, 192, 64, 160, 0, 192, 64, 192, 0, 192, 64, 224, 0, 192, 96, 0, 0, 192, 96, 32, 0, 192, 96, 64, 0, 192, 96, 96, 0, 192, 96, 128, 0, 192, 96, 160, 0, 192, 96, 192, 0, 192, 96, 224, 0, 192, 128, 0, 0, 192, 128, 32, 0, 192, 128, 64, 0, 192, 128, 96, 0, 192, 128, 128, 0,  192, 128, 160, 0, 192, 128, 192, 0, 192, 128, 224, 0, 192, 160, 0, 0, 192, 160, 32, 0, 192, 160, 64, 0, 192, 160, 96, 0, 192, 160, 128, 0, 192, 160, 160, 0, 192, 160, 192, 0, 192, 160, 224, 0, 192, 192, 0, 0, 192, 192, 32, 0, 192, 192, 64, 0, 192, 192, 96, 0, 192, 192, 128, 0, 192, 192, 160, 0, 240, 251, 255, 0, 164, 160, 160, 0, 128, 128, 128, 0, 0, 0, 255, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 0, 0, 0, 255, 0, 255, 0, 255, 255, 0, 0, 255, 255, 255, 0};
 						int inb[7]={0, 64, 128, 164, 192, 240, 255}, ing[12]={0, 32, 64, 96, 128, 160, 192, 202, 220, 224, 251, 255}, inr[9] = {0, 32, 64, 96, 128, 160, 192, 224, 255};
 						COLORREF color;
@@ -650,10 +650,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 						int intnear, temp2[1]={0};
 						byte num;
 
-						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // ÆÄÀÏ »ı¼º
+						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // íŒŒì¼ ìƒì„±
 
-						WriteFile(fp, &hf, sizeof(hf), &readn, NULL);// Çì´õ ÀÛ¼º
-						WriteFile(fp, &infohead, sizeof(infohead), &readn, NULL); // ÆÄÀÏÇì´õ ÀÛ¼º
+						WriteFile(fp, &hf, sizeof(hf), &readn, NULL);// í—¤ë” ì‘ì„±
+						WriteFile(fp, &infohead, sizeof(infohead), &readn, NULL); // íŒŒì¼í—¤ë” ì‘ì„±
 
 						for(int i = 0; i < 256 ; i++)
 						{
@@ -666,7 +666,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 							pal[i].rgbReserved = temp_pal[k];
 							k++;
 						}
-						WriteFile(fp,(char*)&pal,sizeof(RGBQUAD)*256,&readn,NULL); // ÆÈ·¹Æ® ÀÛ¼º
+						WriteFile(fp,(char*)&pal,sizeof(RGBQUAD)*256,&readn,NULL); // íŒ”ë ˆíŠ¸ ì‘ì„±
 						for (y = rt.bottom-1; y >= 0; y--)
 						{
 							for (x = 0; x < rt.right; x++)
@@ -678,8 +678,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 								g = color & 255;
 								color = color >> 8;
 								r = color & 255;
-								// °¢ rgb°ª Ã£¾ÒÀ½
-								for(num = 0; num < 256; num++){ // ÆÈ·¹Æ®¿¡ ÀÖ´Â »öÀÌ¸é »ğÀÔ
+								// ê° rgbê°’ ì°¾ì•˜ìŒ
+								for(num = 0; num < 256; num++){ // íŒ”ë ˆíŠ¸ì— ìˆëŠ” ìƒ‰ì´ë©´ ì‚½ì…
 									is=0;
 									if(pal[num].rgbBlue == r && pal[num].rgbGreen == g && pal[num].rgbRed == b){
 										WriteFile(fp,(char*)&num,1,&readn,NULL);
@@ -687,7 +687,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 										break;
 									}
 								}
-								//if(is==0){ // ¸øÃ£¾ÒÀ» °æ¿ì ±Ù»ç°ª Ã£±â
+								//if(is==0){ // ëª»ì°¾ì•˜ì„ ê²½ìš° ê·¼ì‚¬ê°’ ì°¾ê¸°
 								//	diffMin = inb[0] - b;
 								//	for(int i = 0; i < 7; i++) //b
 								//	{
@@ -721,7 +721,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 								//		}
 								//	}
 								//	r = intnear;
-								//	for(int temp = 0; temp < 256; temp++){ // ±Ù»ç°ªÀ¸·Î ´Ù½Ã
+								//	for(int temp = 0; temp < 256; temp++){ // ê·¼ì‚¬ê°’ìœ¼ë¡œ ë‹¤ì‹œ
 								//		if(pal[temp].rgbBlue == b && pal[temp].rgbGreen == g && pal[temp].rgbRed == r){
 								//			WriteFile(fp, (char*)temp2, 1, &readn, NULL);
 								//			is=0;
@@ -734,16 +734,16 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 									}
 									count=0;
 								}
-							}// ÇÑÁÙ ´Ù ÀÛ¼º
+							}// í•œì¤„ ë‹¤ ì‘ì„±
 							x = 0;
 						}	
 					CloseHandle(fp);	
 					}
-					else if (SFN.nFilterIndex == 4){ // vi·Î ÀúÀå
+					else if (SFN.nFilterIndex == 4){ // vië¡œ ì €ì¥
 						control.now_ptr = control.head_ptr;
-						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // ÆÄÀÏ »ı¼º
+						fp = CreateFile(lpstrFile2, GENERIC_WRITE, 0, NULL,CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); // íŒŒì¼ ìƒì„±
 						WriteFile(fp, &control.count, 4, &readn, NULL);
-						for(int i = 0; i < control.count; i++) { // headºÎÅÍ ´ÙÀ½ Æ÷ÀÎÅÍ Á¤º¸¸¦ Á¦¿ÜÇÏ°í ´Ù »ğÀÔ
+						for(int i = 0; i < control.count; i++) { // headë¶€í„° ë‹¤ìŒ í¬ì¸í„° ì •ë³´ë¥¼ ì œì™¸í•˜ê³  ë‹¤ ì‚½ì…
 							WriteFile(fp, control.now_ptr, sizeof(vi)-4, &readn, NULL);
 							control.now_ptr = control.now_ptr->ptr;
 						}
@@ -758,7 +758,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			new_flag=1;
 			InvalidateRect(hwnd,NULL,TRUE);
 			control.now_ptr = control.head_ptr;
-			for(int i = 0; i < control.count; i++) { // ±âÁ¸ ±×·ÁÁ®¼­ »ı¼ºµÈ vi±¸Á¶Ã¼ ÇÒ´ç ÇØÁ¦
+			for(int i = 0; i < control.count; i++) { // ê¸°ì¡´ ê·¸ë ¤ì ¸ì„œ ìƒì„±ëœ viêµ¬ì¡°ì²´ í• ë‹¹ í•´ì œ
 				temp = control.now_ptr;
 				control.now_ptr = control.now_ptr->ptr;
 				delete(temp);
@@ -796,7 +796,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.now_ptr->size = size;
 			control.count++;
 			control.now_ptr->ptr = new vi;
-			control.now_ptr = control.now_ptr->ptr; // ÀÚÀ¯¼± ¸¸µé¸é ¹Ù²Ù±â
+			control.now_ptr = control.now_ptr->ptr; // ììœ ì„  ë§Œë“¤ë©´ ë°”ê¾¸ê¸°
 			control.now_ptr->ptr = NULL;
 		}
 		break; 
@@ -806,9 +806,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		if(control.head_ptr==NULL) {
 			control.head_ptr = new vi;
 			control.now_ptr = control.head_ptr;
-		}// vi±¸Á¶Ã¼°¡ ÇÏ³ªµµ ¾øÀ¸¸é »ı¼º
+		}// viêµ¬ì¡°ì²´ê°€ í•˜ë‚˜ë„ ì—†ìœ¼ë©´ ìƒì„±
 		switch(shape){
-		case 1: //Á÷¼±
+		case 1: //ì§ì„ 
 			control.now_ptr->vshape = 1;
 			control.now_ptr->flag_fill = 0;
 			control.now_ptr->fill_color = 0;
@@ -820,7 +820,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.now_ptr->size = size;
 			control.count++;
 			break;
-		case 2: // ¿ø
+		case 2: // ì›
 			control.now_ptr->vshape = 2;
 			control.now_ptr->flag_fill = brus;
 			control.now_ptr->fill_color = b_color;
@@ -832,7 +832,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.now_ptr->size = size;
 			control.count++;
 			break;
-		case 3: // »ï°¢Çü
+		case 3: // ì‚¼ê°í˜•
 			control.now_ptr->vshape = 3;
 			control.now_ptr->flag_fill = brus;
 			control.now_ptr->fill_color = b_color;
@@ -844,7 +844,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.now_ptr->size = size;
 			control.count++;
 			break;
-		case 4: // »ç°¢Çü
+		case 4: // ì‚¬ê°í˜•
 			control.now_ptr->vshape = 4;
 			control.now_ptr->flag_fill = brus;
 			control.now_ptr->fill_color = b_color;
@@ -857,19 +857,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.count++;
 			break;
 		}
-		if(shape !=0) {// ÀÚÀ¯¼±ÀÌ ¾Æ´Ò °æ¿ì
+		if(shape !=0) {// ììœ ì„ ì´ ì•„ë‹ ê²½ìš°
 			BitBlt(backMemDC, 0, 0, rt.right, rt.bottom, hdc, 0, 0, SRCCOPY);
 			control.now_ptr->ptr = new vi;
-			control.now_ptr = control.now_ptr->ptr; // ÀÚÀ¯¼± ¸¸µé¸é ¹Ù²Ù±â
+			control.now_ptr = control.now_ptr->ptr; // ììœ ì„  ë§Œë“¤ë©´ ë°”ê¾¸ê¸°
 			control.now_ptr->ptr = NULL;
 		}
 		break;
 
 	case WM_MOUSEMOVE:
 		if(shape !=0)
-			BitBlt(MemDC, 0, 0, rt.right, rt.bottom, backMemDC, 0, 0, SRCCOPY); // ¹é¾÷À» ÇöÀç·Î ÃÊ±âÈ­
+			BitBlt(MemDC, 0, 0, rt.right, rt.bottom, backMemDC, 0, 0, SRCCOPY); // ë°±ì—…ì„ í˜„ì¬ë¡œ ì´ˆê¸°í™”
 
-		if(draw && shape == 0){  // ÀÚÀ¯¼±
+		if(draw && shape == 0){  // ììœ ì„ 
 			MoveToEx(MemDC,x,y,NULL);
 			control.now_ptr->old.x = x;
 			control.now_ptr->old.y = y;
@@ -888,20 +888,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			control.now_ptr->ptr = new vi;
 			control.now_ptr = control.now_ptr->ptr;
 			control.now_ptr->ptr = NULL;
-		} // ÀÚÀ¯¼± Á¤º¸¸¦¸¦ °è¼ÓÇØ¼­ ÀúÀå
-		else if(draw && shape == 1){ // Á÷¼±
+		} // ììœ ì„  ì •ë³´ë¥¼ë¥¼ ê³„ì†í•´ì„œ ì €ì¥
+		else if(draw && shape == 1){ // ì§ì„ 
 			MoveToEx(MemDC, old_x, old_y, NULL);
 			x=(int)LOWORD(lParam);
 			y=(int)HIWORD(lParam);
 			LineTo(MemDC, x, y);
 		}
-		else if(draw && shape == 2){ // ¿ø
+		else if(draw && shape == 2){ // ì›
 			x=(int)LOWORD(lParam);
 			y=(int)HIWORD(lParam);
 			MoveToEx(MemDC, old_x, old_y, NULL);
 			Ellipse(MemDC, old_x, old_y, x, y);
 		}
-		else if(draw && shape == 3){ // »ï°¢Çü
+		else if(draw && shape == 3){ // ì‚¼ê°í˜•
 			POINT gag[3];
 			x=(int)LOWORD(lParam);
 			y=(int)HIWORD(lParam);
@@ -914,7 +914,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			gag[2].y=y;
 			Polygon(MemDC, gag, 3);
 		}
-		else if(draw && shape == 4){ // »ç°¢Çü
+		else if(draw && shape == 4){ // ì‚¬ê°í˜•
 			x=(int)LOWORD(lParam);
 			y=(int)HIWORD(lParam);
 			MoveToEx(MemDC, old_x, old_y, NULL);
@@ -924,14 +924,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		break;
 
 	case WM_PAINT:
-		BitBlt(hdc, 0, 0, rt.right, rt.bottom, MemDC, 0, 0, SRCCOPY); // ÇöÀçÀÇ ±×¸²À» Ãâ·Â
+		BitBlt(hdc, 0, 0, rt.right, rt.bottom, MemDC, 0, 0, SRCCOPY); // í˜„ì¬ì˜ ê·¸ë¦¼ì„ ì¶œë ¥
 		if(shape == 0 || new_flag==1){
-			BitBlt(backMemDC, 0, 0, rt.right, rt.bottom, MemDC, 0, 0, SRCCOPY); // ÀÚÀ¯¼±ÀÏ °æ¿ì ¹Ù·Î ¹é¾÷
+			BitBlt(backMemDC, 0, 0, rt.right, rt.bottom, MemDC, 0, 0, SRCCOPY); // ììœ ì„ ì¼ ê²½ìš° ë°”ë¡œ ë°±ì—…
 			new_flag=0;
 		}
 		break;
 
-	case WM_DESTROY:			//ÇÁ·Î±×·¥ Á¾·á Ã³¸® 
+	case WM_DESTROY:			//í”„ë¡œê·¸ë¨ ì¢…ë£Œ ì²˜ë¦¬ 
 		vi* temp;
 		control.now_ptr = control.head_ptr;
 		for(int i = 0; i < control.count; i++) {
@@ -946,5 +946,5 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		PostQuitMessage(0);
 		break;
 	}
-	return DefWindowProc(hwnd, iMsg, wParam, lParam);			 //CASE¿¡¼­ Á¤ÀÇµÇÁö ¾ÊÀº ¸Ş½ÃÁö´Â Ä¿³ÎÀÌ Ã³¸®ÇÏµµ·Ï ¸Ş½ÃÁö Àü´Ş
+	return DefWindowProc(hwnd, iMsg, wParam, lParam);			 //CASEì—ì„œ ì •ì˜ë˜ì§€ ì•Šì€ ë©”ì‹œì§€ëŠ” ì»¤ë„ì´ ì²˜ë¦¬í•˜ë„ë¡ ë©”ì‹œì§€ ì „ë‹¬
 }
