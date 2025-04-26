@@ -64,5 +64,5 @@
 <br />
 <br />
 > 비트맵
-https://github.com/ho9909/paint-board/blob/main/%EB%B9%84%ED%8A%B8%EB%A7%B5.pdf
+>> https://github.com/ho9909/paint-board/blob/main/%EB%B9%84%ED%8A%B8%EB%A7%B5.pdf
 
